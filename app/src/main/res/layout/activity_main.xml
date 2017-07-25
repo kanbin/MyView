@@ -30,5 +30,11 @@
         <com.example.myview.DataView
             android:layout_width="500dp"
             android:layout_height="500dp"/>
+
+        <com.example.myview.CircleView
+            android:id="@+id/circle_view"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            />
     </LinearLayout>
 </ScrollView>
