@@ -25,24 +25,26 @@ public class MainActivity extends AppCompatActivity {
 
         mCircleView = (CircleView) findViewById(R.id.circle_view);
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                while (true) {
-                    try {
-                        while (radius >= 200) {
-                            radius = 0;
-                        }
-                        mHandler.sendEmptyMessage(0);
-                        radius++;
-                        Thread.sleep(40);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                while (true) {
+//                    try {
+//                        while (radius >= 200) {
+//                            radius = 0;
+//                        }
+//                        mHandler.sendEmptyMessage(0);
+//                        radius++;
+//                        Thread.sleep(40);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//
+//                    }
+//                }
+//            }
+//
+//        }).start();
 
-                    }
-                }
-            }
-
-        }).start();
+        new Thread(mCircleView).start();
     }
 }

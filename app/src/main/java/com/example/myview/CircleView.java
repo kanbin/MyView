@@ -10,7 +10,7 @@ import android.view.View;
  * Created by SONY on 2017/7/24.
  */
 
-public class CircleView extends View {
+public class CircleView extends View implements Runnable{
     private Paint mPaint;
     private int radius;
 
@@ -42,5 +42,23 @@ public class CircleView extends View {
     public void setRadius(int radius){
         this.radius = radius;
         invalidate();
+    }
+
+    @Override
+    public void run() {
+
+        while (true) {
+            try {
+                while (radius >= 200) {
+                    radius = 0;
+                }
+                postInvalidate();
+                radius++;
+                Thread.sleep(40);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+
+            }
+        }
     }
 }
